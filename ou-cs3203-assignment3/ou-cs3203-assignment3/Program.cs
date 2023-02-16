@@ -15,7 +15,7 @@ namespace ou_cs3203_assignment3
         {
             int[] numbers = ParseParameters(args);
 
-            Console.WriteLine("The sum is: " + Sum(numbers));
+           // Console.WriteLine("The sum is: " + Sum(numbers));
             Console.WriteLine("The product is: " + Mutiply(numbers));
 
             Console.ReadKey();

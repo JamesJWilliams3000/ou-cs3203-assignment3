@@ -13,14 +13,24 @@ namespace ou_cs3203_assignment3
     {
         static void Main(string[] args)
         {
-            int[] numbers = ParseParameters(args);
+            Console.WriteLine("Please input a list of integers separated by a space: ");
+            int[] numbers = ParseParameters(Console.ReadLine());
 
-           // Console.WriteLine("The sum is: " + Sum(numbers));
+            Console.WriteLine("The sum is: " + Sum(numbers));
             Console.WriteLine("The product is: " + Mutiply(numbers));
 
             Console.ReadKey();
         }
 
+        //parses from a single line of input separated by a space
+        private static int[] ParseParameters(string input)
+        {
+            string[] inputArray = input
+                .Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            return ParseParameters(inputArray);
+        }
+
+        //parses from command line parameters
         private static int[] ParseParameters(string[] args)
         {
             int[] numbers = new int[args.Length];

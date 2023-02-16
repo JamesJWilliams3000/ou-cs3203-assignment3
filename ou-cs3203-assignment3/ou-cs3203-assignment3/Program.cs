@@ -13,21 +13,45 @@ namespace ou_cs3203_assignment3
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("The sum is: " + Sum(args));
+            int[] numbers = ParseParameters(args);
+
+            Console.WriteLine("The sum is: " + Sum(numbers));
+            Console.WriteLine("The product is: " + Mutiply(numbers));
+
             Console.ReadKey();
         }
 
-        private static int Sum(string[] args)
+        private static int[] ParseParameters(string[] args)
+        {
+            int[] numbers = new int[args.Length];
+            for (int i = 0; i < args.Length; i++)
+            {
+                numbers[i] = Int32.Parse(args[i]);
+            }
+
+            return numbers;
+        }
+
+        private static int Sum(int[] numbers)
         {
             int sum = 0;
-            foreach (var arg in args)
+            foreach (var num in numbers)
             {
-                //insert error checking here
-                int num = Int32.Parse(arg);
                 sum += num;
             }
 
             return sum;
+        }
+
+        private static int Mutiply(int[] numbers)
+        {
+            int product = 1; //dont multiply by 0
+            foreach (var num in numbers)
+            {
+                product *= num;
+            }
+
+            return product;
         }
     }
 }

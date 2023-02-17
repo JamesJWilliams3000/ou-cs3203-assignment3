@@ -13,13 +13,16 @@ namespace ou_cs3203_assignment3
     {
         static void Main(string[] args)
         {
-            Console.Write("Please input a list of integers separated by a space: ");
+            //input
+            Console.WriteLine("Please input a list of integers separated by a space: ");
             int[] numbers = ParseParameters(Console.ReadLine());
             Console.WriteLine("The reversed list is: " + String.Join(" ", ReverseArray(numbers)));
 
+            //output
             Console.WriteLine("The sum is: " + Sum(numbers));
             Console.WriteLine("The product is: " + Mutiply(numbers));
 
+            //this is here because otherwise the terminal closes while debugging in VS
             Console.ReadKey();
         }
 

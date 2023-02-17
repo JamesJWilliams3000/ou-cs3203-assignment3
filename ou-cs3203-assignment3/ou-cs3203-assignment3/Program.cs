@@ -17,8 +17,8 @@ namespace ou_cs3203_assignment3
             int[] numbers = ParseParameters(Console.ReadLine());
             Console.WriteLine("The reversed list is: " + String.Join(" ", ReverseArray(numbers)));
 
-            //Console.WriteLine("The sum is: " + Sum(numbers));
-            //Console.WriteLine("The product is: " + Mutiply(numbers));
+            Console.WriteLine("The sum is: " + Sum(numbers));
+            Console.WriteLine("The product is: " + Mutiply(numbers));
 
             Console.ReadKey();
         }
